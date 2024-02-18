@@ -10,9 +10,9 @@
 <body>
     <div class="container1">
         <h1 class="test">To Do List</h1>
-        <button>Create Project</button>
-        <button>Create To DO</button>
-        <button>Create Notes</button>
+        <button id="btnCreateProject">Create Project</button>
+        <button id="btnCreateToDo">Create To DO</button>
+        <button id="btnCreateNotes">Create Notes</button>
     </div>
     <div class="container2">
         <div>
@@ -28,6 +28,47 @@
             <div>This belongs to Notes</div>
         </div>
     </div>
+
+
+    <article>
+
+        <dialog class="Create-Project">
+            <form method="dialog">
+                <label for="Project-Title">Project Title:</label>
+                <input type="text" id="Project-Title" name="Project-Title">
+                <button>Confirm</button>
+                <button>Cancel</button>
+            </form>
+        </dialog>
+
+        <dialog class="Create-ToDo">
+            <form method="dialog">
+                <label for="ToDo-Title">ToDo Title:</label>
+                <input type="text" id="ToDo-Title" name="ToDo-Title">
+                <label for="ToDo-Description">Description: </label>
+                <textarea name="ToDo-Description" id="ToDo-Description" cols="5" rows="5"></textarea>
+                <label for="ToDo-DueDate">DueDate: </label>
+                <input type="date" id="ToDo-DueDate" name="ToDo-DueDate">
+                <label for="ToDo-Priority">Priority: </label>
+                <select name="ToDo-Priority" id="ToDo-Priority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <button>Confirm</button>
+                <button>Cancel</button>
+            </form>
+        </dialog>
+
+        <dialog class="Create-Notes">
+            <form method="dialog">
+                <label for="CreateNotes-Description">Description: </label>
+                <textarea name="ToDo-Description" id="ToDo-Description" cols="25" rows="25"></textarea>
+                <button>Confirm</button>
+                <button>Cancel</button>
+            </form>
+        </dialog>
+    </article>
 
 </body>
 
