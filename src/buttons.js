@@ -1,5 +1,5 @@
-import { Project,arrayOfProjects,test4 } from "./projects";
-
+import { setDataProject,test4 } from "./projects";
+import { displayDataDOMProject } from "./setDOMData";
 
 // Buttons Dom Behaviour
 
@@ -8,14 +8,8 @@ export function initializeButtons()
     document.querySelector('#btnCreateProject').addEventListener('click', displayModal);
     document.querySelector('#btnCreateToDo').addEventListener('click', displayModal);
     document.querySelector('#btnCreateNotes').addEventListener('click', displayModal);
-    document.querySelector('.Confirm-Project').addEventListener('click', extractProjectData)
+    document.querySelector('.Confirm-Project').addEventListener('click', confirmBtnResponse)
 }
-
-
-// Not that important right now but the below Heavily reliant on the HTML Naming Schematic 
-// and unsure if it affects O from Solid due to the fact that what is calling it is 
-// the event listener but just to be sure that concept has been clear ask for feedback on odin 
-
 
 function displayModal(element)
 {
@@ -28,14 +22,17 @@ function displayModal(element)
 
 function extractProjectData(eventObj)
 {
-    eventObj.preventDefault();
-    const test = document.querySelector('#Project-Title').value;
-    const test1 = eventObj.target.closest('form');
-    const newform = new FormData(test1);
-    for (const check of newform.values())
+    const formElement = eventObj.target.closest('form');
+    const formData = new FormData(formElement);
+    for (const data of formData.values())
     {
-        console.log(check);
-        arrayOfProjects.push(new Project(check));
+        setDataProject(data);
     }
-    test4();
+}
+
+function confirmBtnResponse(eventObj){
+    eventObj.preventDefault();
+    extractProjectData(eventObj);
+    displayDataDOMProject();
+
 }

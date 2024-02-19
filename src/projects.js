@@ -10,6 +10,16 @@ const arrayOfProjects = [];
 const DefaultProject = new Project('DefaultProject');
 arrayOfProjects.push(DefaultProject);
 
+function setDataProject(title){
+    const newProject = new Project(title);
+    arrayOfProjects.push(newProject);
+}
+
+function getDataProject(){
+    const dataOfProjectArrays = arrayOfProjects.slice();
+    return dataOfProjectArrays;
+}
+
 function test4()
 {
     arrayOfProjects.forEach((projectInstance) =>
@@ -18,4 +28,4 @@ function test4()
     })
 }
 
-export {Project,arrayOfProjects,test4}
+export {setDataProject, getDataProject, test4}
