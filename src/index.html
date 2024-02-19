@@ -32,16 +32,16 @@
 
     <article>
 
-        <dialog class="Create-Project">
+        <dialog id="BtnCreateProject">
             <form method="dialog">
                 <label for="Project-Title">Project Title:</label>
                 <input type="text" id="Project-Title" name="Project-Title">
-                <button>Confirm</button>
+                <button class="Confirm-Project">Confirm</button>
                 <button>Cancel</button>
             </form>
         </dialog>
 
-        <dialog class="Create-ToDo">
+        <dialog id="BtnCreateToDo">
             <form method="dialog">
                 <label for="ToDo-Title">ToDo Title:</label>
                 <input type="text" id="ToDo-Title" name="ToDo-Title">
@@ -55,16 +55,16 @@
                     <option value="Medium">Medium</option>
                     <option value="Low">Low</option>
                 </select>
-                <button>Confirm</button>
+                <button class="Confirm-ToDo">Confirm</button>
                 <button>Cancel</button>
             </form>
         </dialog>
 
-        <dialog class="Create-Notes">
+        <dialog id="BtnCreateNotes">
             <form method="dialog">
                 <label for="CreateNotes-Description">Description: </label>
                 <textarea name="ToDo-Description" id="ToDo-Description" cols="25" rows="25"></textarea>
-                <button>Confirm</button>
+                <button class="Confirm-Notes">Confirm</button>
                 <button>Cancel</button>
             </form>
         </dialog>
