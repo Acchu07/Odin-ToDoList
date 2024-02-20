@@ -1,4 +1,6 @@
 import { setDataProject } from "../projects/projects";
+import { setDataNotes } from "../notes/notes";
+
 
 // separate file for data extraction? possible to make function dynamic in nature to respond to different types of data? but this would contradict with o of solid?
 export function extractFormData(eventObj)
@@ -13,6 +15,9 @@ export function extractFormData(eventObj)
         }
     }
     else{
-        console.log("hello incorrect form")
+        for (const data of formData.values())
+        {
+            setDataNotes(data);
+        }
     }
 }
