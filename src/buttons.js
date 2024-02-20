@@ -1,5 +1,6 @@
-import { setDataProject,test4 } from "./projects";
-import { displayDataDOMProject } from "./setDOMData";
+import { setDataProject,test4 } from "./scripts/projects/projects";
+import { displayDataDOMProject } from "./scripts/projects/displayandSetProjectDom";
+import { displayDataDOMNotes } from "./scripts/notes/displayandSetNotesDom";
 
 // Buttons Dom Behaviour
 
@@ -8,7 +9,8 @@ export function initializeButtons()
     document.querySelector('#btnCreateProject').addEventListener('click', displayModal);
     document.querySelector('#btnCreateToDo').addEventListener('click', displayModal);
     document.querySelector('#btnCreateNotes').addEventListener('click', displayModal);
-    document.querySelector('.Confirm-Project').addEventListener('click', confirmBtnResponse)
+    document.querySelector('.Confirm-Project').addEventListener('click', confirmBtnResponseProject)
+    document.querySelector('.Confirm-Notes').addEventListener('click', confirmBtnResponseNotes)
 }
 
 function displayModal(element)
@@ -20,6 +22,8 @@ function displayModal(element)
     document.querySelector(changeIDName).showModal();
 }
 
+
+// separate file for data extraction? possible to make function dynamic in nature to respond to different types of data? but this would contradict with o of solid?
 function extractProjectData(eventObj)
 {
     const formElement = eventObj.target.closest('form');
@@ -30,9 +34,14 @@ function extractProjectData(eventObj)
     }
 }
 
-function confirmBtnResponse(eventObj){
+function confirmBtnResponseProject(eventObj){
     eventObj.preventDefault();
     extractProjectData(eventObj);
     displayDataDOMProject();
 
+}
+
+function confirmBtnResponseNotes(eventObj){
+    eventObj.preventDefault();
+    displayDataDOMNotes();
 }
