@@ -1,4 +1,5 @@
 import { getDataProject } from "./projects";
+import { clearDataDOMProject } from "../Generic/clearDoM";
 
 export function displayDataDOMProject()
 {
@@ -38,10 +39,4 @@ function setDOMProjectElementsData({parentElementCurrentProject,projectTitle,pro
     projectTitle.innerText = projectObject.title;
     btnDelete.innerText = 'delete'
 
-}
-
-function clearDataDOMProject(parentElementProject){
-    while(parentElementProject.firstElementChild){
-        parentElementProject.removeChild(parentElementProject.firstElementChild)        
-    }
 }

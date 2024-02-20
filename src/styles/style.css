@@ -7,16 +7,26 @@
     font-family: 'ModalFont';
     src: url(../fonts/Protest_Strike/ProtestStrike-Regular.ttf) format(truetype);
 }
-
-/* Common Properties */
-body,.container1,.container2{
-    display: grid;
-    margin: 10px;
+/* Universal Selector */
+*{
+    margin: 0;
+    padding: 0;
 }
 
+/* Common Properties */
+body,.container1,.container2,#NoteDisplay{
+    display: grid;
+    gap: 10px;
+    margin: 15px;
+}
+
+body{
+    gap: 50px;
+}
 
 dialog,button{
     box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;   
+    padding: 20px;
 }
 
 .container1>h1,.container2>div>h2,button{
@@ -55,7 +65,8 @@ button{
 
 
 dialog{
-    top: 20%;    
+    top: 20%;  
+    left: 35%;
 }
 
 dialog::backdrop{
@@ -76,4 +87,13 @@ form{
     gap: 20px;
     align-items: center;
     justify-content: space-between;
+}
+
+#NoteDisplay{
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+}
+
+#NoteDisplay > button{
+    grid-column: 1/3;
 }

@@ -28,4 +28,4 @@ function test4()
     })
 }
 
-export {setDataProject, getDataProject, test4}
+export {setDataProject, getDataProject}
