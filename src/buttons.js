@@ -1,6 +1,7 @@
 import { displayDataDOMProject } from "./scripts/projects/displayandSetProjectDom";
 import { displayDataDOMNotes } from "./scripts/notes/displayandSetNotesDom";
 import { extractFormData } from "./scripts/Generic/extractDataform";
+import { updateToDoProjectOptions } from "./scripts/toDo/displayandSetToDoDoM";
 
 
 // Buttons Dom Behaviour
@@ -8,7 +9,7 @@ import { extractFormData } from "./scripts/Generic/extractDataform";
 export function initializeButtons()
 {
     document.querySelector('#btnCreateProject').addEventListener('click', displayModal);
-    document.querySelector('#btnCreateToDo').addEventListener('click', displayModal);
+    document.querySelector('#btnCreateToDo').addEventListener('click', displayToDoModal);
     document.querySelector('#btnCreateNotes').addEventListener('click', displayModal);
     document.querySelector('.Confirm-Project').addEventListener('click', confirmBtnResponseProject)
     document.querySelector('.Confirm-Notes').addEventListener('click', confirmBtnResponseNotes)
@@ -21,6 +22,12 @@ function displayModal(element)
     changeIDName = `#${changeIDName}`;
 
     document.querySelector(changeIDName).showModal();
+}
+
+function displayToDoModal(){
+    document.querySelector("#BtnCreateToDo").showModal();
+    updateToDoProjectOptions();
+
 }
 
 function confirmBtnResponseProject(eventObj)

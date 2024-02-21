@@ -14,7 +14,7 @@ export function extractFormData(eventObj)
             setDataProject(data);
         }
     }
-    else{
+    else if(formData.has('CreateNotes-Description')){
         for (const data of formData.values())
         {
             setDataNotes(data);

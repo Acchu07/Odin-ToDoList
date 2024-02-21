@@ -24,7 +24,7 @@ class Notes
 }
 
 const arrayNotes = [];
-const testNote = new Notes(`ome Data present in here bla bla Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, illoitaque est quas eligendi quis repellendus placeat delectus. Et placeat porro delectus illo, sit quos vitae pariatur impedit maxime reprehenderit?`);
+const testNote = new Notes(`Some Data present in here Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, illoitaque est quas eligendi quis repellendus placeat delectus. Et placeat porro delectus illo, sit quos vitae pariatur impedit maxime reprehenderit?`);
 arrayNotes.push(testNote);
 
 export function setDataNotes(formData){

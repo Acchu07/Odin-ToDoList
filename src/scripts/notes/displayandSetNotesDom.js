@@ -57,3 +57,5 @@ function removeNoteFromDoM(element){
     removeNoteFromArrayNotes(noteTitle);
     displayDataDOMNotes();        
 }
+
+displayDataDOMNotes();

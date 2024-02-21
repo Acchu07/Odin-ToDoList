@@ -40,3 +40,6 @@ function setDOMProjectElementsData({parentElementCurrentProject,projectTitle,pro
     btnDelete.innerText = 'delete'
 
 }
+
+
+displayDataDOMProject();

@@ -3,11 +3,13 @@ class Project
     constructor(title)
     {
         this.title = title;
+        this.toDoList = [];
     }
 }
 
 const arrayOfProjects = [];
 const DefaultProject = new Project('DefaultProject');
+
 arrayOfProjects.push(DefaultProject);
 
 function setDataProject(title){
