@@ -12,15 +12,31 @@ const DefaultProject = new Project('DefaultProject');
 
 arrayOfProjects.push(DefaultProject);
 
-function setDataProject(title){
+function setDataProject(title)
+{
     const newProject = new Project(title);
     arrayOfProjects.push(newProject);
 }
 
-function getDataProject(){
+function getDataProject()
+{
     const dataOfProjectArrays = arrayOfProjects.slice();
     return dataOfProjectArrays;
 }
+
+export function setProjectToDoList(Object)
+{
+    arrayOfProjects.forEach((ProjectObject) =>
+    {
+        if (ProjectObject.title === Object.project)
+        {
+            ProjectObject.toDoList.push(Object);
+        }
+    })
+
+}
+
+
 
 function test4()
 {
@@ -30,4 +46,4 @@ function test4()
     })
 }
 
-export {setDataProject, getDataProject}
+export { setDataProject, getDataProject }

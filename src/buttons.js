@@ -1,7 +1,7 @@
 import { displayDataDOMProject } from "./scripts/projects/displayandSetProjectDom";
 import { displayDataDOMNotes } from "./scripts/notes/displayandSetNotesDom";
 import { extractFormData } from "./scripts/Generic/extractDataform";
-import { updateToDoProjectOptions } from "./scripts/toDo/displayandSetToDoDoM";
+import { displayToDoDefaultProject, updateToDoProjectOptions } from "./scripts/toDo/displayandSetToDoDoM";
 
 
 // Buttons Dom Behaviour
@@ -13,6 +13,7 @@ export function initializeButtons()
     document.querySelector('#btnCreateNotes').addEventListener('click', displayModal);
     document.querySelector('.Confirm-Project').addEventListener('click', confirmBtnResponseProject)
     document.querySelector('.Confirm-Notes').addEventListener('click', confirmBtnResponseNotes)
+    document.querySelector('#Confirm-ToDo').addEventListener('click', confirmBtnResponseToDo)
 }
 
 function displayModal(element)
@@ -42,4 +43,11 @@ function confirmBtnResponseNotes(eventObj)
     eventObj.preventDefault();
     extractFormData(eventObj);
     displayDataDOMNotes();
+}
+
+function confirmBtnResponseToDo(eventObj){
+    eventObj.preventDefault();
+    extractFormData(eventObj);
+    
+
 }

@@ -1,3 +1,4 @@
+import { update } from "lodash";
 import { clearDataDOMProject } from "../Generic/clearDoM";
 import { getDataProject } from "../projects/projects"
 
@@ -14,11 +15,19 @@ export function updateToDoProjectOptions(){
 
 function createDOMOptionsProject(Object,index){
     const createOptionElement = document.createElement('option');
+    createOptionElement.addEventListener('click',updateToDoProjectValue) // This does not work
 
     createOptionElement.innerText = Object.title;
-    createOptionElement.value = Object.title;
     createOptionElement.dataset.indexNumber = index;
-
     return createOptionElement;
 }
 
+export function displayToDoDefaultProject(){
+    const DefaultProject = getDataProject()[0];
+    console.log(DefaultProject);
+}
+
+function updateToDoProjectValue(index){
+    console.log("entering EventListener");
+
+}
