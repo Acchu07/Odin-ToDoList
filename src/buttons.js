@@ -2,6 +2,7 @@ import { displayDataDOMProject } from "./scripts/projects/displayandSetProjectDo
 import { displayDataDOMNotes } from "./scripts/notes/displayandSetNotesDom";
 import { extractFormData } from "./scripts/Generic/extractDataform";
 import { displayToDoDefaultProject, updateToDoProjectOptions } from "./scripts/toDo/displayandSetToDoDoM";
+import { test } from "./scripts/localstorage";
 
 
 // Buttons Dom Behaviour
@@ -43,11 +44,10 @@ function confirmBtnResponseNotes(eventObj)
     eventObj.preventDefault();
     extractFormData(eventObj);
     displayDataDOMNotes();
+    test();
 }
 
 function confirmBtnResponseToDo(eventObj){
     eventObj.preventDefault();
     extractFormData(eventObj);
-    
-
 }

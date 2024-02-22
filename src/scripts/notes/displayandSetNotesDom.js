@@ -36,9 +36,9 @@ function createNotesElements(notesIterator)
     return createParentDiv;
 }
 
-function modifyNotesElements({ createButtonChild, arrayParagraph, createParentDiv,notesIterator })
+function modifyNotesElements({ createButtonChild, arrayParagraph, createParentDiv, notesIterator })
 {
-    createButtonChild.addEventListener('click',removeNoteFromDoM) // event listener added
+    createButtonChild.addEventListener('click', removeNoteFromDoM) // event listener added
     createButtonChild.innerText = "X";
     createParentDiv.setAttribute('id', 'NoteDisplay')
 
@@ -51,11 +51,13 @@ function modifyNotesElements({ createButtonChild, arrayParagraph, createParentDi
     }
 }
 
-function removeNoteFromDoM(element){
+function removeNoteFromDoM(element)
+{
     const noteTitle = element.target.parentElement.firstElementChild.innerText;
     // Do i need to remove the event listener how does it work when with dom? since i am adding it in a function it should the variable is scoped to the block so it shouldnt exist
     removeNoteFromArrayNotes(noteTitle);
-    displayDataDOMNotes();        
+    displayDataDOMNotes();
 }
+
 
 displayDataDOMNotes();

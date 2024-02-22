@@ -29,7 +29,7 @@ arrayNotes.push(testNote);
 
 export function setDataNotes(formData){
     const createNoteObject = new Notes(formData);
-    arrayNotes.push(createNoteObject);
+    arrayNotes.push(createNoteObject);    
 }
 
 export function removeNoteFromArrayNotes(noteTitle){
