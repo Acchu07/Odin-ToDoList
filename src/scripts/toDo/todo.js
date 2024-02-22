@@ -4,14 +4,14 @@ import { setProjectToDoList } from "../projects/projects";
 
 class ToDo
 {
-    constructor(title, description, dueDate, priority,indexNumber)
+    constructor(title, description, dueDate, priority,indexNumber,toDoIndexNumber=null)
     {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
         this.indexNumber = parseInt(indexNumber);
-        this.toDoIndexNumber = null;
+        this.toDoIndexNumber = toDoIndexNumber;
     }
 }
 

@@ -34,12 +34,15 @@ function createDOMProjectElements(projectObject, IndexNumber)
     setDOMProjectElementsData(projectData);
 
     parentElementCurrentProject.appendChild(projectTitle);
-    parentElementCurrentProject.appendChild(btnDelete)
+    if (IndexNumber !== 0)
+    {
+        parentElementCurrentProject.appendChild(btnDelete)
+    }
 
     return parentElementCurrentProject;
 }
 
-function setDOMProjectElementsData({ parentElementCurrentProject, projectTitle, projectObject, btnDelete,IndexNumber })
+function setDOMProjectElementsData({ parentElementCurrentProject, projectTitle, projectObject, btnDelete, IndexNumber })
 {
     projectTitle.innerText = projectObject.title;
     projectTitle.dataset.indexValue = IndexNumber;

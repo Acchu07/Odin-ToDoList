@@ -1,6 +1,8 @@
 import { update } from "lodash";
 import { clearDataDOMProject } from "../Generic/clearDoM";
 import { getDataProject } from "../projects/projects"
+import { SetDataToDoObject } from "./todo";
+import _ from "lodash";
 
 export function updateToDoProjectOptions()
 {
@@ -85,7 +87,9 @@ function showModalWindow(object) // this one is quite dependent on closure need 
     document.querySelector('#ToDo-DueDate').value = object.dueDate;
     document.querySelector('#ToDo-Priority').value = object.priority;
     
-    getDataProject()[object.indexNumber]["toDoList"].splice(object.toDoIndexNumber); // this assumes that the confirm button is pressed
+    getDataProject()[object.indexNumber]["toDoList"].splice(object.toDoIndexNumber);
+    const newObject = _.values(object)
+    SetDataToDoObject(newObject);    
 }
 
 
