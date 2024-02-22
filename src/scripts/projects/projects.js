@@ -26,14 +26,7 @@ function getDataProject()
 
 export function setProjectToDoList(Object)
 {
-    arrayOfProjects.forEach((ProjectObject) =>
-    {
-        if (ProjectObject.title === Object.project)
-        {
-            ProjectObject.toDoList.push(Object);
-        }
-    })
-
+    arrayOfProjects[Object.indexNumber]["toDoList"].push(Object);
 }
 
 

@@ -4,23 +4,21 @@ import { setProjectToDoList } from "../projects/projects";
 
 class ToDo
 {
-    constructor(title, description, dueDate, priority,project)
+    constructor(title, description, dueDate, priority,indexNumber)
     {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.project = project
+        this.indexNumber = parseInt(indexNumber);
+        this.toDoIndexNumber = null;
     }
 }
 
 
-const NewToDo = new ToDo('a', 'bbbbbb', '24-02-2024', 'high');
+// const NewToDo = new ToDo('a', 'bbbbbb', '24-02-2024', 'high');
 
 export function SetDataToDoObject(ObjectValues){
     const newToDoObject = new ToDo(...ObjectValues);
-    // Need logic if project name is same then how to differentiate
     setProjectToDoList(newToDoObject);
 }
-
-export { NewToDo }

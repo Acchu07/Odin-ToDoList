@@ -24,9 +24,9 @@ export function extractFormData(eventObj)
     else if(formData.has('ToDo-Title')){
         const newToDoArray = [];
         for(const data of formData.values()){
-            // console.log(data);
             newToDoArray.push(data);
         }
         SetDataToDoObject(newToDoArray);
     }
+    eventObj.target.form.reset();
 }
