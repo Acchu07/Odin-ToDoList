@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { test,test3 } from '../localstorage';
 
 class Notes
 {
@@ -34,6 +35,7 @@ export function setDataNotes(formData){
 
 export function removeNoteFromArrayNotes(noteTitle){
     _.remove(arrayNotes, (NoteObjects)=> NoteObjects.title.includes(noteTitle));
+    test3(noteTitle);
     if(!arrayNotes.length){
         Notes.computedValueRestart();
     }

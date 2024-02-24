@@ -6,4 +6,4 @@ import { test1 } from './scripts/localstorage';
 
 initializeButtons();
 
-// test1();
+test1();
